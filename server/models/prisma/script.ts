@@ -1,8 +1,6 @@
-import { PrismaClient } from '@prisma/client'
+const {PrismaClient} = require('@prisma/client')
 const prisma = new PrismaClient()
-
-
-async function getPets() {
+ async function getPets() {
     try {
         const pets = await prisma.pet.findMany();
         return pets
@@ -15,7 +13,8 @@ async function getPets() {
 async function addPet(name: string, species: string, friendly: boolean, url: string) {
     try {
         const pet =  await prisma.pet.create({data: {name: name, species: species, friendly: friendly, url: url}})
-        console.log(pet)
+        console.log(pet);
+        return pet
     }
 
     catch(error) {
@@ -23,15 +22,16 @@ async function addPet(name: string, species: string, friendly: boolean, url: str
     }
     
 }
-
 async function deletePet(id: number) {
    
    try { const deletedPet = await prisma.pet.delete({
         where: {
             id: id
         }
+        
     })}
     catch(error) {
         console.error('Error at attempt to delete pet', error)
     }
 }
+module.exports= {getPets, addPet, deletePet}

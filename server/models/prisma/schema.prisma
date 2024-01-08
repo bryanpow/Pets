@@ -14,5 +14,5 @@ model Pet {
   name String
   url String
   species String
-  friendly Boolean
+  friendly Boolean?
 }

@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart": "nodemon prisma/script.ts"
+    "devStart": "nodemon prisma/script.ts",
+    "start": "nodemon server/routes/index.js"
   },
   "keywords": [],
   "author": "",
