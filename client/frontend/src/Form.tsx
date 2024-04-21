@@ -58,7 +58,7 @@ export function Form() {
   return (
     <>
     <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column', gap:'20px', width: '300px'}}>
-        <h1 >Add a new Pet!</h1>
+        <h1 >Add a new Pet! </h1>
         <div>
             <label htmlFor='name' className='pl-10'>Pet Name<span className='sup'>*</span> </label>
             <input name='name' id='name' value={petName} onChange={(e) => setPetName(e.target.value)} required></input>
